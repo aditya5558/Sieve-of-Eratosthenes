@@ -6,15 +6,15 @@ int main()
     cout<<"\nEnter n:";
     cin>>n;
 
-    int prime[n];
+    int prime[n+1];
     for(int i=2;i<=n;i++)
        prime[i]=i;
 
 
     for(int i=2;i*i<=n;i++)
-        {   for(int j=i;(i*j)<=n;j++)
+        {   for(int j=i*i;j<=n;j+=i)
             {
-                prime[(i*j)]=0;
+                prime[j]=0;
             }
         }
     for(int i=2;i<=n;i++)
